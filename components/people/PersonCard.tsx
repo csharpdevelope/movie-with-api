@@ -6,9 +6,9 @@ import Link from "next/link";
 function PersonCard({person}: {person: Actor}) {
   var strs: string[] = [];
   for (const known of person.known_for) {
-    if (known.name != undefined)
+    if (known.name)
       strs.push(known.name)
-    else if (known.title != undefined)
+    else if (known.title)
       strs.push(known.title)
   }
 
