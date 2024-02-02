@@ -19,7 +19,7 @@ function RecommendVideos({movies, title, movieName}: {movies: RecommendType[], t
               <Card key={movie.id} style={{minWidth: '300px', maxHeight: '220px'}} className="space-y-4 shadow-md overflow-y-hidden dark:shadow-gray-600 hover:scale-105 shadow-blue-300 rounded-xl w-[300px] h-auto">
                 <CardContent className="p-0 h-44">
                   <Link href={`/${movie.media_type}/${movie.id + "-"+ movie.title.replaceAll(" ", "-")}`}>
-                    <Image src={getImagePath(movie.backdrop_path)} className="object-cover rounded-tr-xl rounded-tl-xl group-hover:scale-105" alt={movie.title} width={300} height={250} />
+                    <Image src={getImagePath(movie.backdrop_path)} className="object-cover object-top h-full rounded-tr-xl rounded-tl-xl group-hover:scale-105" alt={movie.title} width={300} height={250} />
                     <div className="bg-gradient-to-t from-gray-700 via-gray-800/10 to-gray-400/30" />
                   </Link>
                 </CardContent>

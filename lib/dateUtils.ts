@@ -31,6 +31,7 @@ export function getHourMinutes(runtime: number) {
 }
 
 export function getDateFormat(date: string) {
+  if (!date) return null;
   const formating = new Date(date); // Assuming you have a Date object
 
   const options: Intl.DateTimeFormatOptions = {

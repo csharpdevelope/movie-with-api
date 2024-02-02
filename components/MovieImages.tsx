@@ -11,11 +11,11 @@ function MovieImages({images, posterCard}: {images: ImageInfo[], posterCard?: bo
           <Image src={getImagePath(image.file_path)} alt={image.file_path} width={500} height={300} className={`rounded-xl object-contain w-[${posterCard ? '200px': '500px'}] h-[${posterCard ? '150px': '290px'}]`} />
         </div>
     ))}
-    <div className={`relative rounded-xl min-w-[200px] min-h-[${posterCard ? '300px': '300px'}] flex justify-center items-center bg-white dark:bg-transparent dark:text-white shadow shadow-blue-300 `} key={"View_more_BackDrop_Image"}>
+    {images.length >= 6 && <div className={`relative rounded-xl min-w-[200px] min-h-[${posterCard ? '300px': '300px'}] flex justify-center items-center bg-white dark:bg-transparent dark:text-white shadow shadow-blue-300 `} key={"View_more_BackDrop_Image"}>
       <Link href={"/"}>
         <p className='text-xl text-black dark:text-white'>Vew more</p>
       </Link>
-    </div>
+    </div>}
   </div> : <p className="text-center text-xl">No Images</p>
   )
 }

@@ -33,12 +33,12 @@ async function MovieDetailSection({data, trailerKey}: Props) {
               <p className="text-4xl text-white">{data.title} <span className="text-gray-400">({getFullYear(data.release_date)})</span></p>
             </div>
             <div className="flex items-center text-lg space-x-1 text-white">
-              <p>{getDateUtils(data.release_date)}</p>
+              {data.release_date && <p>{getDateUtils(data.release_date)}</p>}
               {data.genres.length >= 1 && (
                 <div className="flex flex-row space-x-2 before:content-['•'] before:text-xl before:content-between">
                 {data.genres.map(genre => (
                   <Link href={`/genre/${genre.id}?genre=${genre.name}`} key={genre.id}>
-                    <p className="text-lg text-white hover:text-gray-400">{genre.name}</p>
+                    <p className="text-lg text-white hover:text-gray-400">{genre.name}</p>,
                   </Link>
                 ))}
               </div>

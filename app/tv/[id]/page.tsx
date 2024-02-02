@@ -149,7 +149,7 @@ async function TvSeriesPage({params: {id}}: Props) {
             <div className="space-y-2">
               <p className="">Keywords</p>
               <div className="flex flex-wrap gap-2">
-                {keywords.map(keyword => <Link href={`/keywords/${keyword.id + "-" + keyword.name.replaceAll(" ", "-")}/movie`} className="text-xs bg-gray-300 dark:bg-gray-700 px-2 py-1 rounded-sm" key={keyword.id}>{keyword.name}</Link>)}
+                {keywords.map(keyword => <Link href={`/keyword/${keyword.id + "-" + keyword.name.replaceAll(" ", "-")}/tv`} className="text-xs bg-gray-300 dark:bg-gray-700 px-2 py-1 rounded-sm" key={keyword.id}>{keyword.name}</Link>)}
               </div>
             </div>
           )}

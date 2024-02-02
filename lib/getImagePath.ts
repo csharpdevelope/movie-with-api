@@ -1,7 +1,7 @@
 const getImagePath = (imagePath?: string, fullsize?: boolean) => {
   return imagePath ? 
     `http://image.tmdb.org/t/p/${fullsize ? "original": "w500"}/${imagePath}`
-    : "https://links.papareact.com/08z";
+    : "https://demofree.sirv.com/nope-not-here.jpg";
 }
 
 export default getImagePath;

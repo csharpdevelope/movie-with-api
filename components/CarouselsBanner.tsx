@@ -27,7 +27,7 @@ function CarouselsBanner({movies}: {movies: Movie[]}) {
                 key={movie.id}
                 src={getImagePath(movie.backdrop_path, true)}
                 alt={movie.title}
-                className="w-full"
+                className="w-full object-contain object-top"
                 width={1920}
                 height={1080}
               />
