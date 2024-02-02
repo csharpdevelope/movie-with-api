@@ -38,7 +38,7 @@ async function MovieDetailSection({data, trailerKey}: Props) {
                 <div className="flex flex-row space-x-2 before:content-['•'] before:text-xl before:content-between">
                 {data.genres.map(genre => (
                   <Link href={`/genre/${genre.id}?genre=${genre.name}`} key={genre.id}>
-                    <p className="text-lg text-white hover:text-gray-400">{genre.name}</p>,
+                    <p className="text-lg text-white hover:text-gray-400">{genre.name}</p>
                   </Link>
                 ))}
               </div>
