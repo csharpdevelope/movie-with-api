@@ -62,7 +62,7 @@ async function MovieDetailSection({data, trailerKey}: Props) {
             </div>
             <div className="text-lg text-white space-y-1">
               <p className="italic text-gray-400">{data.tagline}</p>
-              <p className="text-xl">Overview</p>
+              {data.overview && <p className="text-xl">Overview</p>}
               <p className="text-gray-200 text-[16px]">{data.overview}</p>
             </div>
           </div>

@@ -47,10 +47,10 @@ export interface PSearchResult {
   total_results: number;
 }
 
-export async function getPopularPeople() {
+export async function getPopularPeople(page: number) {
   const url = new URL("https://api.themoviedb.org/3/person/popular");
   url.searchParams.set("language", "en-US");
-  url.searchParams.set("page", "1");
+  url.searchParams.set("page", page.toString());
   const options: RequestInit = {
     method: "GET",
     headers: {

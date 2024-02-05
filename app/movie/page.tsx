@@ -10,15 +10,6 @@ import { Movie } from "@/typings";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { 
-  Pagination, 
-  PaginationContent, 
-  PaginationEllipsis, 
-  PaginationItem, 
-  PaginationLink, 
-  PaginationNext, 
-  PaginationPrevious 
-} from "@/components/ui/pagination";
 import Loading from "@/components/Loading";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -70,36 +61,6 @@ function MovieList() {
     setGrid(isActive);
   }
 
-  const getVisiblePages = () => {
-    var array: number[] = [];
-    const range: number = 3;
-    var isAddfirstElement: boolean = false;
-    for (var i=1; i<=totalPage; i++) {
-      // first element
-      if (currentPage > range) {
-        if (!isAddfirstElement) {
-          array.push(1);
-          array.push(0);
-          isAddfirstElement = true;
-        }
-      }
-
-      if (array.length === range) {
-        array.push(0);
-        array.push(totalPage)
-        return array;
-      }
-      array.push(i);
-    }
-    return array;
-  };
-
-  const visiblePages = getVisiblePages();
-  const changeCurrentPage = (page: number) => {
-    if (page == currentPage) return;
-    setCurrentPage(page);
-  }
-
   return (
     <div className="mt-20 md:mt-30 2xl:mt-36 mb-10 max-w-[1800px] px-5 lg:px-30 2xl:px-40">
       <div className="flex justify-between items-center">
@@ -135,28 +96,7 @@ function MovieList() {
                 )))}
               </div>
               <hr className="h-[2px] bg-blue-600 my-10" />
-              <Pagination className="flex justify-end" defaultValue={currentPage}>
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationPrevious href="/" aria-disabled/>
-                  </PaginationItem>
-                  
-                  {visiblePages.map(page => (
-                    page !== 0 ? 
-                    <PaginationItem key={page + "_pagination"}>
-                      <PaginationLink isActive={page === currentPage} onClick={() => changeCurrentPage(page)}>
-                        {page}
-                      </PaginationLink>
-                    </PaginationItem> : 
-                    <PaginationItem key={page + "_pagination"}>
-                      <PaginationEllipsis />
-                    </PaginationItem>
-                  ))}
-                  <PaginationItem>
-                    <PaginationNext href="/" />
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>
+              <PaginationCustom currentPage={currentPage} setCurrentPage={setCurrentPage} totalPage={totalPage} />
             </div>
           ) : <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 py-4">
               <Skeleton className="min-h-[200px] min-w-72 w-96 rounded-xl" /> 
