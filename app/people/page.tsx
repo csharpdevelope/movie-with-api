@@ -1,10 +1,8 @@
 'use client'
 
 import PersonCard from "@/components/people/PersonCard";
-import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Actor, getPopularPeople } from "@/lib/getPerson";
-import { result } from "lodash";
 import { useEffect, useState } from "react";
 
 function PeoplePage() {

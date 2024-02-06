@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
+import { getUpcomingMovies } from "@/service/axios/movieAPI";
 
 
 export const metadata: Metadata = {
